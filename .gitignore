@@ -1,38 +1,57 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # Dependencies
-node_modules
-.pnp
-.pnp.js
+node_modules/
+**/node_modules/
 
-# Local env files
+# Bun
+bun.lockb
+bun-debug.log*
+
+# Environment files
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
 
-# Testing
-coverage
-
-# Turbo
-.turbo
-
-# Vercel
-.vercel
-
-# Build Outputs
+# Builds
 .next/
-out/
-build
-dist
+**/.next/
+dist/
+**/dist/
+build/
+coverage/
+.turbo/
+**/.turbo/
 
+# Generated Prisma client
+apps/api/src/generated/
 
-# Debug
+# Prisma local/debug files
+prisma/.cache/
+
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log*
 
-# Misc
+# Testing
+.nyc_output/
+playwright-report/
+test-results/
+
+# Editors and operating systems
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
 .DS_Store
-*.pem
+Thumbs.db
+
+# Temporary scaffold files
+.turbo-clone-temp/
+
+# Local Docker overrides
+compose.override.yml
+docker-compose.override.yml
